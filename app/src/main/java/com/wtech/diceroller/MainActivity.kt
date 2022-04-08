@@ -10,16 +10,18 @@ import android.widget.Toast
 import kotlin.random.Random
 
 class MainActivity : AppCompatActivity() {
+    private lateinit var dicedImage:ImageView
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val rollButton: Button=findViewById(R.id.btn_roll)
+
+        dicedImage=findViewById(R.id.diceImage)
 
     }
 
     fun rollDice(view: View) {
-        val dicedImage:ImageView=findViewById(R.id.diceImage)
+
         val imageResource=when(Random.nextInt(6)+1){
             1->R.drawable.dice_1
             2->R.drawable.dice_2
